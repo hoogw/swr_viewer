@@ -79,7 +79,9 @@ SELECT DISTINCT category FROM getType ORDER BY category
 
 
 <ul class="collapsible z-depth-2">
-    <li>
+
+<!---   Preselected Section, If you want a collapsible with a preopened section just add the active class to the collapsible-header. --->
+    <li class="active">
       <div class="collapsible-header"><i class="material-icons">search</i>Site</div>   
       <div class="collapsible-body">
            
