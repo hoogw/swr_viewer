@@ -765,8 +765,7 @@ style="position:relative;top:8px;left:5px;height:100%;width:100%;border:2px #req
 
 <cfinclude template="../template/footer.cfm" />
 				
-<!--- this is for header and footer , must have --->
-<script src="../js/index.js"></script>
+
 	
 <script src="../js/search/swSiteSearch.js"></script>
 

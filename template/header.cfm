@@ -104,6 +104,12 @@
                                 
                                 
                                 
+                                
+
+                                 <script src="#_site_root_dir#js/index.js"></script>
+                                
+                                
+                                
                 </HEAD>
                 
                 

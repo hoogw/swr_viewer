@@ -13,6 +13,3 @@
 
 <cfinclude template="template/footer.cfm" />
 
-
-
-<script src="js/index.js"></script>
