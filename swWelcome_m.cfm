@@ -465,136 +465,170 @@ SELECT count(*) as cnt FROM tblSites WHERE Construction_Start_Date IS NOT NULL A
 
 
 
-<table class="left highlight striped">
-        <thead>
-          <tr>
-              <th style="width: 400px;"><strong>Progress as of #dt#</strong></th>
-              <th><strong>Totals</strong></th>
-             
-          </tr>
-        </thead>
+	<style>
+            
+            <!---  Content of table goes out of card with Materialize CSS  bug fixed by  https://stackoverflow.com/questions/52750684/content-of-table-goes-out-of-card-with-materialize-css --->
+            
+              .table-responsive {
+               display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                -ms-overflow-style: -ms-autohiding-scrollbar;
+            }
+            
+    </style>
 
-        <tbody>
-          <tr>
-            <td>Total Number of Sites</td>
-            <td>#getAllSites.cnt#</td>
-            
-          </tr>
-          <tr>
-            <td>Sites Assessed</td>
-            <td>#getAssessed.cnt#</td>
-            
-          </tr>
-          <tr>
-            <td>Sites Requiring Repairs</td>
-            <td>#getRepairs.cnt#</td>
-            
-          </tr>
-          
-          
-          
-          
-          
-          
-           <tr>
-            <td>Sites Not Requiring Repairs</td>
-            <td>#getNoRepairs.cnt#</td>
-            
-          </tr>
-          
-          
-          
-          
-           <tr>
-            <td>Estimated Construction Cost</td>
-            <td>$#trim(numberformat(getEst.total,"9,999,999,999.00"))#</td>
-            
-          </tr>
-          
-          
-          
-           <tr>
-            <td>Sites with Notice to Proceed (NTP) Issued</td>
-            <td>#getNTP.cnt#</td>
-            
-          </tr>
-          
-          
-          
-           <tr>
-            <td>Total Awarded Bid Amount</td>
-            <td>$#trim(numberformat(getPricing.total,"9,999,999,999.00"))#</td>
-            
-          </tr>
-          
-          
-          
-           <tr>
-            <td>Sites Completed Construction</td>
-            <td>#getCompleted.cnt#</td>
-            
-          </tr>
-          
-          
-          
-           <tr>
-            <td>Cost for Completed Sites</td>
-            <td>$#trim(numberformat(getCost.cost,"9,999,999,999.00"))#</td>
-            
-          </tr>
-          
-          
-           <tr>
-            <td>Total Sq. Ft. of Concrete For Completed Sites</td>
-            <td>#trim(numberformat(getConcrete.total,"9,999,999,999"))#</td>
-            
-          </tr>
-          
-          
-           <tr>
-            <td>Total Number of Trees Removed</td>
-            <td>#trc#</td>
-            
-          </tr>
-          
-          
-           <tr>
-            <td>Total Number of Trees Planted</td>
-            <td>#tpc#</td>
-            
-          </tr>
-          
-          
-          
-          
-          
-          
-           <tr>
-            <td>Total Number of Trees to be Removed</td>
-            <td>#ttbrc#</td>
-            
-          </tr>
-          
-          
-          
-          
-          
-           <tr>
-            <td>Total Number of Trees to be Planted</td>
-            <td>#ttbpc#</td>
-            
-          </tr>
-          
-          
-          
-          
-          
-        </tbody>
-      </table>
+
+
+
+
+    <div class="row">
+      <div class="col s4">
+        <div class="card-panel z-depth-2">
+       
+               <div class="table-responsive"> 
+         
+       
+                                            
+                                            
+                                            
+                                            <table class="left highlight striped">
+                                                    <thead>
+                                                      <tr>
+                                                          <th><strong>Progress as of #dt#</strong></th>
+                                                          <th><strong>Totals</strong></th>
+                                                         
+                                                      </tr>
+                                                    </thead>
+                                            
+                                                    <tbody>
+                                                      <tr>
+                                                        <td>Total Number of Sites</td>
+                                                        <td>#getAllSites.cnt#</td>
+                                                        
+                                                      </tr>
+                                                      <tr>
+                                                        <td>Sites Assessed</td>
+                                                        <td>#getAssessed.cnt#</td>
+                                                        
+                                                      </tr>
+                                                      <tr>
+                                                        <td>Sites Requiring Repairs</td>
+                                                        <td>#getRepairs.cnt#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Sites Not Requiring Repairs</td>
+                                                        <td>#getNoRepairs.cnt#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Estimated Construction Cost</td>
+                                                        <td>$#trim(numberformat(getEst.total,"9,999,999,999.00"))#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Sites with Notice to Proceed (NTP) Issued</td>
+                                                        <td>#getNTP.cnt#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Total Awarded Bid Amount</td>
+                                                        <td>$#trim(numberformat(getPricing.total,"9,999,999,999.00"))#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Sites Completed Construction</td>
+                                                        <td>#getCompleted.cnt#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Cost for Completed Sites</td>
+                                                        <td>$#trim(numberformat(getCost.cost,"9,999,999,999.00"))#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Total Sq. Ft. of Concrete For Completed Sites</td>
+                                                        <td>#trim(numberformat(getConcrete.total,"9,999,999,999"))#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Total Number of Trees Removed</td>
+                                                        <td>#trc#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Total Number of Trees Planted</td>
+                                                        <td>#tpc#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Total Number of Trees to be Removed</td>
+                                                        <td>#ttbrc#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                       <tr>
+                                                        <td>Total Number of Trees to be Planted</td>
+                                                        <td>#ttbpc#</td>
+                                                        
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                    </tbody>
+                                                  </table>
 
 
 
 		
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 	
 		
 		

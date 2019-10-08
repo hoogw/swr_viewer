@@ -15,8 +15,7 @@
                 <meta charset="utf-8" />
             
                 
-                <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-                <link rel="icon" href="../favicon.ico" type="image/x-icon">
+               
                 
                 
                 
@@ -89,7 +88,8 @@
            
            
            
-           
+                
+                <link rel="icon"          href="#_site_root_dir#favicon.ico" type="image/x-icon">
            
            
              <script src="#_site_root_dir#js/index_m.js"></script>  
@@ -114,7 +114,7 @@
                           <li class="divider"></li>
                           <li><a href="#_site_root_dir#search/swPackageSearch_m.cfm">Package</a></li>
                           <li class="divider"></li>
-                          <li><a href="#_site_root_dir#search/swCurbRampSearch_m.cfm">Curb Rampe</a></li>
+                          <li><a href="#_site_root_dir#search/swCurbRampSearch_m.cfm">Curb Ramp</a></li>
                         </ul>
                         
                         
@@ -122,7 +122,7 @@
                         
                         
                         <nav>
-                          <div class="nav-wrapper teal ">
+                          <div class="nav-wrapper cyan darken-3 z-depth-1">
                             
                             <a href="" class="brand-logo right">Side Walk Repair</a>
                             
@@ -134,7 +134,7 @@
                               
                               <li><a href="#_site_root_dir#search/swPackageSearch_m.cfm">Package</a></li>
                               
-                              <li><a href="#_site_root_dir#search/swCurbRampSearch_m.cfm">Curb Rampe</a></li>
+                              <li><a href="#_site_root_dir#search/swCurbRampSearch_m.cfm">Curb Ramp</a></li>
                               
                               <li><a href="#_site_root_dir#search/swReports_m.cfm">Reports</a></li>
                               
