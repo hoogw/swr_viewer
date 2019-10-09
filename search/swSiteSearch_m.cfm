@@ -98,12 +98,12 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                       <span class="card-title"> </span>
                                                                       
                                                                       
-                                                                   
+                                                                   <form name="form1" id="form1" method="post" action="" enctype="multipart/form-data">
                                                                 
                                                                           <div class="row">
                                                                           
                                                                                           <div class="input-field col s1">
-                                                                                              <input placeholder="" id="ss_no" type="text" >
+                                                                                              <input placeholder="" id="ss_no" name="ss_no" type="text" >
                                                                                               <label for="ss_no">Site No:</label>
                                                                                             </div>
                                                                           
@@ -136,7 +136,7 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                             
                                                                             
                                                                                             <div class="input-field col s1">
-                                                                                              <input placeholder="" id="ss_pnoe" type="text" >
+                                                                                              <input placeholder="" id="ss_pno" name="ss_pno" type="text" >
                                                                                               <label for="ss_pno">Package No:</label>
                                                                                             </div>
                                                                             
@@ -184,14 +184,14 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                             
                                                                             
                                                                                        <div class="input-field col s1">
-                                                                                              <input placeholder="" id="ss_name" type="text" >
+                                                                                              <input placeholder="" id="ss_name" name="ss_name" type="text" >
                                                                                               <label for="ss_name">Facility Name:</label>
                                                                                             </div>
                                                                             
                                                                             
                                                                             
                                                                                         <div class="input-field col s1">
-                                                                                              <input placeholder="" id="ss_address" type="text" >
+                                                                                              <input placeholder="" id="ss_address" name="ss_address" type="text" >
                                                                                               <label for="ss_addresse">Address:</label>
                                                                                             </div>
                                                                             
@@ -200,7 +200,7 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                             
                                                                             
                                                                                          <div class="input-field col s1">
-                                                                                              <input placeholder="" id="ss_zip" type="text" >
+                                                                                              <input placeholder="" id="ss_zip" name="ss_zip" type="text" >
                                                                                               <label for="ss_zip">Zip Code:</label>
                                                                                             </div>
                                                                             
@@ -209,14 +209,14 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                             
                                                                             
                                                                                             <div class="input-field col s1">
-                                                                                              <input placeholder="" id="ss_wo" type="text" >
+                                                                                              <input placeholder="" id="ss_wo" name="ss_wo" type="text" >
                                                                                               <label for="ss_wo">Work Order:</label>
                                                                                             </div>
                                                                             
                                                                             
                                                                             
                                                                                               <div class="input-field col s1">
-                                                                                              <input placeholder="" id="ss_keyword" type="text" >
+                                                                                              <input placeholder="" id="ss_keyword" name="ss_keyword" type="text" >
                                                                                               <label for="ss_keyword">Keyword:</label>
                                                                                             </div>
                                                                             
@@ -432,15 +432,201 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                       
                                                                       
                                                                       
-                                                                                </div>
+                                                                                </div>   <!--- row --->
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                 <div class="row">
+                                                                                
+                                                                                
+                                                                                
+                                                                                          
+                                                                                
+                                                                                                        <div class="input-field col s2">
+                                                                                                           <label for="ss_assfrm">Assessed Date From:</label>
+                                                                                                           <input name="ss_assfrm" id="ss_assfrm"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                
+                                                                                
+                                                                                                          <div class="input-field col s2">
+                                                                                                           <label for="ss_assto">Assessed Date To:</label>
+                                                                                                           <input name="ss_assto" id="ss_assto"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        
+                                                                                                         <div class="input-field col s1">
+                                                                                                         <label for="ss_assnull">
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_assnull" id="ss_assnull"   <!--- checked="checked"   --->  />
+                                                                                                            <span>Is Null</span>
+                                                                                                            </label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        
+                                                                                                        
+                                                                                                         <div class="input-field col s1">
+                                                                                                        
+                                                                                                               <!--- just blank to seperate  ---> 
+                                                                                                         
+                                                                                                         </div>
+                                                                                                        
+                                                                                                        
+                                                                                                        
+                                                                                                        
+                                                                                                        
+                                                                                                        <div class="input-field col s2">
+                                                                                                           <label for="ss_qcfrm">QC Date From:</label>
+                                                                                                           <input name="ss_qcfrm" id="ss_qcfrm"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                
+                                                                                
+                                                                                                          <div class="input-field col s2">
+                                                                                                           <label for="ss_qcto">QC Date To:</label>
+                                                                                                           <input name="ss_qcto" id="ss_qcto"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        
+                                                                                                         <div class="input-field col s1">
+                                                                                                         <label for="ss_qcnull">
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_qcnull" id="ss_qcnull"   <!--- checked="checked"   --->  />
+                                                                                                            <span>Is Null</span>
+                                                                                                            </label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        
+                                                                                
+                                                                                
+                                                                                 </div>   <!--- row --->
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                    <div class="row">
+                                                                                
+                                                                                
+                                                                                
+                                                                                          
+                                                                                
+                                                                                                        <div class="input-field col s2">
+                                                                                                           <label for="ss_consfrm">Construction Started Frome:</label>
+                                                                                                           <input name="ss_consfrm" id="ss_consfrm"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                
+                                                                                
+                                                                                                          <div class="input-field col s2">
+                                                                                                           <label for="ss_consto">Construction Started To:</label>
+                                                                                                           <input name="ss_consto" id="ss_consto"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        
+                                                                                                         <div class="input-field col s1">
+                                                                                                         <label for="ss_consnull">
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_consnull" id="ss_consnull"  <!--- checked="checked"   --->  />
+                                                                                                            <span>Is Null</span>
+                                                                                                            </label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        
+                                                                                                        
+                                                                                                         <div class="input-field col s1">
+                                                                                                        
+                                                                                                               <!--- just blank to seperate  ---> 
+                                                                                                         
+                                                                                                         </div>
+                                                                                                         
+                                                                                                         
+                                                                                                         <div class="input-field col s2">
+                                                                                                           <label for="ss_concfrm">Construction Completed Frome:</label>
+                                                                                                           <input name="ss_concfrm" id="ss_concfrm"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                
+                                                                                
+                                                                                                          <div class="input-field col s2">
+                                                                                                           <label for="ss_concto">Construction Completed To:</label>
+                                                                                                           <input name="ss_concto" id="ss_concto"  type="text" class="datepicker">
+                                                                                                          
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        
+                                                                                                         <div class="input-field col s1">
+                                                                                                         <label for="ss_concnull">
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <!--- checked="checked"   --->  />
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_concnull" id="ss_concnull"  <!--- checked="checked"   --->  />
+                                                                                                            <span>Is Null</span>
+                                                                                                            </label>
+                                                                                                        </div>
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                 </div>   <!--- row --->
+                                                                                 
                                                                       
-                                                                      
+                                                                           </form>
                                                                       
                                                                     </div>
+                                                                    
+                                                                    
+                                                                    
+                                                                    
                                                                     <div class="card-action">
                                                                       <a href="">Search</a>
                                                                       <a href="">Clear</a>
                                                                     </div>
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
                                                                   </div>
                                                                 </div>
                                                               </div>
@@ -455,6 +641,37 @@ SELECT DISTINCT category FROM getType ORDER BY category
    
   </ul>
            
+
+
+
+
+   
+                           <div id="data_table" class="container">
+                                <!-- Page Content goes here -->
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                              </div>
+                              
+                              
+                              
+                              
+                              <div id="sample" class="container">
+								</div>
+
+
+
 
 
 	

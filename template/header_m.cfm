@@ -19,7 +19,7 @@
                 
                 
                 
-                <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     
     
     
@@ -55,11 +55,24 @@
                                 
                                 
                <!---JavaScript at end of body for optimized loading--->
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     
+          			 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     
            
            
            
            
+           
+            <!--- --------------    data table js --------------    --->
+           
+           
+					 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        
+                     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.material.min.js"></script>
+                     
+                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+                     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css">
+           
+           
+            <!--- END  -------------- data table js   -------------- --->
            
            
            
