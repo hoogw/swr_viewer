@@ -81,8 +81,9 @@ SELECT DISTINCT category FROM getType ORDER BY category
 <ul class="collapsible z-depth-2">
 
 <!---   Preselected Section, If you want a collapsible with a preopened section just add the active class to the collapsible-header. --->
-    <li class="active">
-      <div class="collapsible-header"><i class="material-icons">search</i>Site</div>   
+  <!---   <li class="active">   --->
+    <li>
+      <div class="collapsible-header"><i class="material-icons">search</i></div>   
       <div class="collapsible-body">
            
             
@@ -463,16 +464,8 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                                                         
                                                                                                          <div class="input-field col s1">
                                                                                                          <label for="ss_assnull">
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <input type="checkbox" class="filled-in" name="ss_assnull" id="ss_assnull"   <!--- checked="checked"   --->  />
+                                                                                                            
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_assnull" id="ss_assnull" />
                                                                                                             <span>Is Null</span>
                                                                                                             </label>
                                                                                                         </div>
@@ -505,16 +498,8 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                                                         
                                                                                                          <div class="input-field col s1">
                                                                                                          <label for="ss_qcnull">
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <input type="checkbox" class="filled-in" name="ss_qcnull" id="ss_qcnull"   <!--- checked="checked"   --->  />
+                                                                                                           
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_qcnull" id="ss_qcnull"/>
                                                                                                             <span>Is Null</span>
                                                                                                             </label>
                                                                                                         </div>
@@ -552,16 +537,8 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                                                         
                                                                                                          <div class="input-field col s1">
                                                                                                          <label for="ss_consnull">
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <input type="checkbox" class="filled-in" name="ss_consnull" id="ss_consnull"  <!--- checked="checked"   --->  />
+                                                                                                            
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_consnull" id="ss_consnull"/>
                                                                                                             <span>Is Null</span>
                                                                                                             </label>
                                                                                                         </div>
@@ -591,16 +568,8 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                                                                                         
                                                                                                          <div class="input-field col s1">
                                                                                                          <label for="ss_concnull">
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <!--- checked="checked"   --->  />
-                                                                                                            <input type="checkbox" class="filled-in" name="ss_concnull" id="ss_concnull"  <!--- checked="checked"   --->  />
+                                                                                                           
+                                                                                                            <input type="checkbox" class="filled-in" name="ss_concnull" id="ss_concnull"/>
                                                                                                             <span>Is Null</span>
                                                                                                             </label>
                                                                                                         </div>
@@ -646,8 +615,8 @@ SELECT DISTINCT category FROM getType ORDER BY category
 
 
    
-                           <div id="data_table" class="container">
-                                <!-- Page Content goes here -->
+                          
+                                <table id="data_table" class="display" width="100%"></table>
                                 
                                 
                                 
@@ -659,16 +628,10 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                 
                                 
                                 
-                                
-                                
-                                
-                              </div>
+                          
                               
                               
-                              
-                              
-                              <div id="sample" class="container">
-								</div>
+                           
 
 
 

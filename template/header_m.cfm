@@ -68,7 +68,13 @@
         
                      <script src="https://cdn.datatables.net/1.10.20/js/dataTables.material.min.js"></script>
                      
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+                    <!---   this will cause navigation menu bar miss position, it is for materialized-data-table only, so do not use this feature, until you fix the miss position problem.   
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+                     --->
+                      
+                      
+                      
+                      
                      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css">
            
            
@@ -153,6 +159,9 @@
                               
                               <!--- Dropdown Trigger --->
                               <li><a class="dropdown-trigger" href="" data-target="dropdown1">Search<i class="material-icons right">arrow_drop_down</i></a></li>
+                              
+                              
+                              
                             </ul>
                           
                           

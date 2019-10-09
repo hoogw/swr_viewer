@@ -51,11 +51,28 @@ var _timeout = 5000;  // 5 second
 																						
 																						
 																						
+																						 var _columns = query.COLUMNS
+																						 console.log(' _columns ..... ',  _columns)
+																						 
+																						 var _data = query.DATA
+																						console.log(' _data .....>>>> ',  _data)
+																						
+																						
+																						
+																						
+																						
+																						
+																						
+																						
+																						
+																						/*
+																						
+																						
 																						
 																							var sno; var ssfx; var sp; var sg; var sname; var saddr; var stype; var swo; var sid; var spid; var spry; var cd; var tc; var tcon; var eest; var ncurb; 
 																							
 																							
-																							$.each(query.COLUMNS, function(i, item) {
+																							$.each(_columns, function(i, item) {
 																														   
 																														   
 																													switch (item) {
@@ -116,12 +133,12 @@ var _timeout = 5000;  // 5 second
 																													var items = [];
 																							
 																							
-																							if (query.DATA.length > 0) {
+																							if (_data.length > 0) {
 																								
 																								
 																								
 																								
-																								$.each(query.DATA, function(i, item) {
+																								$.each(_data, function(i, item) {
 																								
 																									if (item[sno] == null) {item[sno] = "";}
 																									if (item[ssfx] == null) {item[ssfx] = "";}
@@ -130,7 +147,7 @@ var _timeout = 5000;  // 5 second
 																									if (item[sname] == null) {item[sname] = "";}
 																									if (item[saddr] == null) {item[saddr] = "";}
 																									
-																									<!--- joe hu --- 3/14/2018 --- add Days in queue --->
+																									
 																									if (item[sdays] == null) {item[sdays] = "";}
 																									
 																									
@@ -145,7 +162,7 @@ var _timeout = 5000;  // 5 second
 																									if (item[tcon] == null) {item[tcon] = 0;}
 																									if (item[eest] == null) {item[eest] = 0;}
 																									
-																									<!--- joe hu 2019-4 multi change --->
+																									
 																									if (item[ncurb] == null) {item[ncurb] = 0;}
 																									
 																									
@@ -177,7 +194,7 @@ var _timeout = 5000;  // 5 second
 																									items.push("<td style='padding:2px 0px 0px 5px;width:346px;' class='small frm'>" + item[sname] + "</td>");
 																									items.push("<td style='padding:2px 0px 0px 5px;' class='small frm'>" + item[saddr] + "</td>");
 																									
-																									<!--- joe hu --- 3/14/2018 --- add Days in queue --->
+																									
 																									items.push("<td style='width:79px;' class='small center frm'>" + item[sdays] + "</td>");
 																									
 																									
@@ -190,11 +207,11 @@ var _timeout = 5000;  // 5 second
 																									items.push("<td style='width:79px;' class='small center frm'>" + item[stype] + "</td>");
 																									
 																									
-																									<!--- joe hu 2019-4 multi change --->
+																									
 																									items.push("<td style='width:66px;' class='small center frm'>" + item[ncurb] + "</td>");
 																									
 																									
-																									<!---items.push("<td style='width:64px;' class='small center frm'>" + item[swo] + "</td>");  --->
+																									
 																									items.push("</tr>");
 																								
 																								}); // each
@@ -225,7 +242,7 @@ var _timeout = 5000;  // 5 second
 																						   
 																						   
 																						   
-																						   
+																						   */
 																						   
 																						   
 																						   
@@ -235,19 +252,263 @@ var _timeout = 5000;  // 5 second
 																						   //
 																						    $('#data_table').DataTable( {
 																													
+																													          //  show info on top,    https://datatables.net/examples/basic_init/dom.html
+																													         "dom": '<"top"i>rt<"bottom"lp><"clear">',	
 																													
-																													"paging":   false,
-																													"ordering": false,
-																													"info":     false,
+																													        // "dom": 'lrtip',  //hide search box without disabling filtering feature   
+																													                            //https://stackoverflow.com/questions/53885245/jquery-datatables-hide-search-bar/53885264
+																																				
+																											                 								
+																																				
+																																				
+																															"paging":   false,
+																														//	"ordering": false,
+																														//	"info":     false,
 																													
 																													
 																													
-																															columnDefs: [
-																																{
-																																	targets: [ 0, 1, 2 ],
-																																	className: 'mdl-data-table__cell--non-numeric'
-																																}
-																															]
+																														data: _data,
+																														
+																														
+																														columns: [
+																															{ title: "ID"                             },
+																															{ title: "Site"                    },                // { title: "LOCATION_NO"                    },
+																															{ title: "LOCATION_SUFFIX"                },
+																															{ title: "NAME"                           },
+																															{ title: "Address"                        },
+																															{ title: "SUBTYPE_DESC"                   },
+																															{ title: "SUBTYPE_DESCRIPTION"            },
+																															{ title: "TYPE_DESC"                      }, //{ title: "TYPE_DESC"                      },
+																															{ title: "CD"               },                  //{ title: "COUNCIL_DISTRICT"               },
+																															{ title: "ZIP_CODE"                       },                                          
+																															{ title: "FIELD_ASSESSED"                 },
+																															{ title: "REPAIRS_REQUIRED"               },
+																															{ title: "ASSESSED_DATE"                  },
+																															{ title: "QC_DATE"                        },
+																															{ title: "NOTES"                          },
+																															{ title: "LOCATION_DESCRIPTION"           },
+																															{ title: "DAMAGE_DESCRIPTION"             },
+																															{ title: "Con. Start"        }, //{ title: "CONSTRUCTION_START_DATE"        },
+																															{ title: "Con. Complete"    }, //{ title: "CONSTRUCTION_COMPLETED_DATE"    },
+																															{ title: "ANTICIPATED_COMPLETION_DATE"    },
+																															{ title: "Days in"                 },//{ title: "DAYS_IN_QUEUES"                 },
+																															{ title: "PACKAGE_NO"                     },
+																															{ title: "Package"                  }, //{ title: "PACKAGE_GROUP"                  },
+																															{ title: "PACKAGED_DATE"                  },
+																															{ title: "WORK_ORDER"                     },
+																															{ title: "PACKAGE_ID"                     },
+																															{ title: "TYPE"                           },
+																															{ title: "REMOVED"                        },
+																															{ title: "SEVERITY_INDEX"                 },
+																															{ title: "Priority"                 }, //{ title: "PRIORITY_SCORE"                 },
+																															{ title: "CURB_RAMP_ONLY"                 },
+																															{ title: "Curb Ramps"               }, //{ title: "NUMBER_CURBRAMPS"               },
+																															{ title: "CLASSIFICATION"                 },
+																															{ title: "PACKAGE"                        },
+																															{ title: "Total_Concrete"                 },  //{ title: "TOTAL_CONCRETE"                 },
+																															{ title: "TREE_REMOVAL_NOTES"             },
+																															{ title: "HAS_BEFORE"                     },
+																															{ title: "HAS_AFTER"                      },
+																															{ title: "Total Cost"                     }, //{ title: "TOTAL_COST"                     },
+																															{ title: "Eng. Estimate"             }, //{ title: "ENGINEERS_ESTIMATE"             },
+																															{ title: "HAS_CERTIFICATE"                },
+																															{ title: "CERTIFICATE_TOTAL"              },
+																															{ title: "GRIEVANCE"                      },
+																															{ title: "SPECIALFUND"                    },
+																															{ title: "LOCKED"                         },
+																															{ title: "HAS_PRESERVED_TREES"            },
+																															{ title: "HAS_REMOVED_TREES"              },
+																															{ title: "HAS_PLANTED_TREES"              }
+																														], 
+																														
+																														
+																														 "columnDefs": [
+																																			{
+																																				"targets": [ 0 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 2 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 3 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			
+																																			{
+																																				"targets": [5 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 6 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 9 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 10 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 11 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 12 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 13 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 14 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 15 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 16 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 19 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 21 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			
+																																			{
+																																				"targets": [ 23 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 24],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 25 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 26 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 27 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 28 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			
+																																			{
+																																				"targets": [ 30 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 32 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 33 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 35 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 36 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 37 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 40 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 41 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 42 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [  43],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [  44],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [  45],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 46 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			},
+																																			{
+																																				"targets": [ 47 ],
+																																				"visible": false,
+																																				"searchable": false
+																																			}
+																																			
+																																		]
+																															
+																															
+																															
+																															
+																															
+																															
 																														} );
 																						   
 																						   
