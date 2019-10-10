@@ -208,13 +208,13 @@
                         </nav>
                                 
                               
+                    
                                 
-                        <div id="preloader" class="progress" style="display:none">
+                               
+                         <div id="preloader" class="progress" style="display:none">
                           <div class="indeterminate"></div>
-                      </div>        
-                                
-                                
-                                
+                        </div>        
+                                       
                                           
           
 		  

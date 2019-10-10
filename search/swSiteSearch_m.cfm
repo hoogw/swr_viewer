@@ -632,7 +632,11 @@ SELECT DISTINCT category FROM getType ORDER BY category
 
 
                             
-                            
+                                        
+                        <div id="preloader" class="progress" style="display:none">
+                          <div class="indeterminate"></div>
+                        </div>        
+                                
                             
                                 
                                 <div class="col s12">
