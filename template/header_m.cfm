@@ -4,6 +4,10 @@
 
 
 			
+            
+            
+            
+            
 
     <!doctype HTML>
 
@@ -15,6 +19,32 @@
                 <meta charset="utf-8" />
             
                 
+               
+               
+               
+                  
+                                <cfset _site_root_dir = request.url>
+                                
+                              
+                                
+                                     
+                                          
+										<script>
+                    
+                                                
+                                                        var url = "#request.url#";
+                                                        var clr = "#request.color#";
+                                                        
+                    
+                                                   console.log('url-->',url)
+                                                   console.log('clr-->',clr)
+												   
+												   
+                                        </script>
+           
+               
+               
+               
                
                 
                 
@@ -82,8 +112,21 @@
                       
                       
                      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css">
-           
-           
+                     
+                     
+                     
+                            <!---  --------------  datetime.js   -------------- --->
+                            <script src="#_site_root_dir#js/lib/moment.js/moment.js"></script>
+                            
+                            
+                            
+                            
+                           <!--- not working ------------- datatable-datetime-plugin not working, always return invalid date  , https://datatables.net/forums/discussion/40040/datetime-plugin--->
+           					<!---<script src="https://cdn.datatables.net/plug-ins/1.10.20/dataRender/datetime.js"></script>  --->
+                           <!--- <script src="#_site_root_dir#js/lib/moment.js/datetime_datatable_plugin.js"></script>--->
+                            
+                            
+                            
             <!--- END  -------------- data table js   -------------- --->
            
            
@@ -93,26 +136,7 @@
            
            
            
-                                
-                                <cfset _site_root_dir = request.url>
-                                
-                              
-                                
-                                     
-                                          
-										<script>
-                    
-                                                
-                                                        var url = "#request.url#";
-                                                        var clr = "#request.color#";
-                                                        
-                    
-                                                   console.log('url-->',url)
-                                                   console.log('clr-->',clr)
-												   
-												   
-                                        </script>
-           
+                             
            
            
            

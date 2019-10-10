@@ -83,7 +83,24 @@ SELECT DISTINCT category FROM getType ORDER BY category
 <!---   Preselected Section, If you want a collapsible with a preopened section just add the active class to the collapsible-header. --->
   <!---   <li class="active">   --->
     <li>
-      <div class="collapsible-header"><i class="material-icons">search</i></div>   
+    
+    
+    
+    
+      <div class="collapsible-header">
+           <i class="material-icons">
+                    search
+           </i>
+           
+            <label class="left-align">  Advance Search </label>
+          
+           
+           
+           
+      </div>   
+      
+      
+      
       <div class="collapsible-body">
            
             
@@ -614,16 +631,6 @@ SELECT DISTINCT category FROM getType ORDER BY category
 
 
 
-                                <div  class="col s12" id="message" style="display:none"> 
-                                </div>
-                            
-                            
-                            
-                            
-                                     <div id="tip" style="display:none" class="col s12">
-                                        <span class="mdi mdi-lightbulb-on-outline teal-text"></span>&nbsp;
-                                        <label class="right-align"> Click any row to see full site information in a new tab </label>
-                                     </div>   
                             
                             
                             
@@ -639,6 +646,16 @@ SELECT DISTINCT category FROM getType ORDER BY category
                                 
                                 
                                 
+                                <div  class="col s12" id="message" style="display:none"> 
+                                </div>
+                            
+                            
+                            
+                            
+                                     <div id="tip" style="display:none" class="col s12">
+                                        <span class="mdi mdi-lightbulb-on-outline teal-text"></span>&nbsp;
+                                        <label class="right-align"> Click any row to see full site information in a new tab </label>
+                                     </div>   
                                 
                                 
                           

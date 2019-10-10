@@ -266,7 +266,7 @@ var _timeout = 100000;  // 100 second
 																						var _table =  $('#data_table').DataTable( {
 																													
 																													          //  show info on top,    https://datatables.net/examples/basic_init/dom.html
-																													         "dom": '<"top"i>rt<"bottom"lp><"clear">',	
+																													      //   "dom": '<"top"i>rt<"bottom"flp><"clear">',	
 																													
 																													        // "dom": 'lrtip',  //hide search box without disabling filtering feature   
 																													                            //https://stackoverflow.com/questions/53885245/jquery-datatables-hide-search-bar/53885264
@@ -274,9 +274,32 @@ var _timeout = 100000;  // 100 second
 																											                 								
 																																				
 																																				
-																															"paging":   true,
+																														"paging":   true,
+																														//	"paging":   false,
+																														
+																														
+																														
+																														
+																														// fix bug , must be here, with out this , extra word "show entries" annoying. 
+																														"lengthChange": false,
+																														//"lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+																														
+																														
+																														
+																														
+																														
+																														
+																														
+																														// default is 10
+																														"pageLength": 10,
+																														
+																														
+																														
+																														
 																														//	"ordering": false,
-																														//	"info":     false,
+																														
+																														// default is true,  sample: 'Showing 1 to 10 of 4,005 entries'
+																															"info":     true,  
 																													
 																													
 																													
@@ -403,6 +426,37 @@ var _timeout = 100000;  // 100 second
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			
+																																			{
+																																				"targets": [ 17 ],
+																																				// datatable-datetime-plugin not working, always return invalid date
+																																				// render: $.fn.dataTable.render.moment( 'MMMM, dd yyyy hh:mm:ss', 'd', 'en' ),
+																																				//https://datatables.net/forums/discussion/40040/datetime-plugin
+																																				// instead use this
+																																				render: function (data) { if (moment(data).isValid()) return moment(data).format("MM/DD/YYYY"); else { return ""; } },
+																																				
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
+																																			
+																																			{
+																																				"targets": [ 18 ],
+																																			    // datatable-datetime-plugin not working, always return invalid date
+																																				// render: $.fn.dataTable.render.moment( 'MMMM, dd yyyy hh:mm:ss', 'd', 'en' ),
+																																				//https://datatables.net/forums/discussion/40040/datetime-plugin
+																																				// instead use this
+																																				render: function (data) { if (moment(data).isValid()) return moment(data).format("MM/DD/YYYY"); else { return ""; } },
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
+																																			
+																																			
+																																			
 																																			{
 																																				"targets": [ 19 ],
 																																				"visible": false,
