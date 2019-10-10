@@ -51,13 +51,19 @@
             
            
                                     
+                                    
+                                    
+                                    
+                                    
                                 
+                              <!-- Compiled and minified CSS -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                    
+                        <!-- Compiled and minified JavaScript -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                                 
                                 
-                                
-               <!---JavaScript at end of body for optimized loading--->
-          			 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     
-           
-           
+              
            
            
            
@@ -68,9 +74,9 @@
         
                      <script src="https://cdn.datatables.net/1.10.20/js/dataTables.material.min.js"></script>
                      
-                    <!---   this will cause navigation menu bar miss position, it is for materialized-data-table only, so do not use this feature, until you fix the miss position problem.   
+                    <!--- This is google version, material lite, not materialized ,   this will cause navigation menu bar miss position, it is for materialized-data-table only, so do not use this feature, until you fix the miss position problem.       --->
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
-                     --->
+                 
                       
                       
                       
@@ -79,6 +85,10 @@
            
            
             <!--- END  -------------- data table js   -------------- --->
+           
+           
+           
+           
            
            
            
@@ -111,9 +121,6 @@
                 <link rel="icon"          href="#_site_root_dir#favicon.ico" type="image/x-icon">
            
            
-             <script src="#_site_root_dir#js/index_m.js"></script>  
-             
-             
              
              
              
@@ -140,39 +147,47 @@
                         
                         
                         
-                        <nav>
-                          <div class="nav-wrapper cyan darken-3 z-depth-1">
+                        
+                      
+                        
+                          <nav>                                                 <!--- <nav class="nav-extended"> --->
+                         
+                         
+                           <div class="nav-wrapper cyan">   
                             
-                            <a href="" class="brand-logo right">Side Walk Repair</a>
+                         <a href="" class="brand-logo right">Side Walk Repair Lite</a>
                             
                             <ul class="left hide-on-med-and-down">
                             
-                              <li><a href="#_site_root_dir#index_m.cfm">Home</a></li>
+                              <li id="home_tab"><a href="#_site_root_dir#index_m.cfm">Home</a></li>
                             
-                              <li><a href="#_site_root_dir#search/swSiteSearch_m.cfm">Site</a></li>
+                              <li id="site_tab"><a href="#_site_root_dir#search/swSiteSearch_m.cfm">Site</a></li>
                               
-                              <li><a href="#_site_root_dir#search/swPackageSearch_m.cfm">Package</a></li>
+                              <li id="package_tab"><a href="#_site_root_dir#search/swPackageSearch_m.cfm">Package</a></li>
                               
-                              <li><a href="#_site_root_dir#search/swCurbRampSearch_m.cfm">Curb Ramp</a></li>
+                              <li id="curb_tab"><a href="#_site_root_dir#search/swCurbRampSearch_m.cfm">Curb Ramp</a></li>
                               
-                              <li><a href="#_site_root_dir#search/swReports_m.cfm">Reports</a></li>
+                              <li id="report_tab"><a href="#_site_root_dir#search/swReports_m.cfm">Reports</a></li>
                               
-                              <!--- Dropdown Trigger --->
-                              <li><a class="dropdown-trigger" href="" data-target="dropdown1">Search<i class="material-icons right">arrow_drop_down</i></a></li>
-                              
+                              <!--- Dropdown Trigger  
+                              <li id="search_tab"><a class="dropdown-trigger" href="" data-target="dropdown1">Search<i class="material-icons right">arrow_drop_down</i></a></li>
+                             --->
                               
                               
                             </ul>
                           
                           
                           
+                           </div>
                           
-                          </div>
+                          
                         </nav>
                                 
+                              
                                 
-                                
-                                
+                        <div id="preloader" class="progress" style="display:none">
+                          <div class="indeterminate"></div>
+                      </div>        
                                 
                                 
                                 

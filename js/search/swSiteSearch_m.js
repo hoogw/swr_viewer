@@ -1,4 +1,4 @@
-var _timeout = 5000;  // 5 second
+var _timeout = 100000;  // 100 second
 
 
 
@@ -7,6 +7,14 @@ var _timeout = 5000;  // 5 second
 
                 function fetch_data(){
 				
+				
+				
+				               $("#preloader").show();
+				               $("#message").hide(); 
+				               $("#tip").hide(); 
+							   
+							   
+							   
 				
 				       		   var frm = $('#form1').serializeArray();
 						
@@ -28,6 +36,11 @@ var _timeout = 5000;  // 5 second
 																												   // ajax failed
 																										  var _error_status = textStatus + ' : ' + errorThrown         
 																										 console.log('ajax error  + ', _error_status)
+																										 
+																										 $("#message").show();
+																										 $("#message").html(errorThrown )
+																										 
+																										 
 																									 },
 													  
 													  
@@ -249,8 +262,8 @@ var _timeout = 5000;  // 5 second
 																						   
 																						   
 																						   
-																						   //
-																						    $('#data_table').DataTable( {
+																						   
+																						var _table =  $('#data_table').DataTable( {
 																													
 																													          //  show info on top,    https://datatables.net/examples/basic_init/dom.html
 																													         "dom": '<"top"i>rt<"bottom"lp><"clear">',	
@@ -261,7 +274,7 @@ var _timeout = 5000;  // 5 second
 																											                 								
 																																				
 																																				
-																															"paging":   false,
+																															"paging":   true,
 																														//	"ordering": false,
 																														//	"info":     false,
 																													
@@ -305,7 +318,7 @@ var _timeout = 5000;  // 5 second
 																															{ title: "Curb Ramps"               }, //{ title: "NUMBER_CURBRAMPS"               },
 																															{ title: "CLASSIFICATION"                 },
 																															{ title: "PACKAGE"                        },
-																															{ title: "Total_Concrete"                 },  //{ title: "TOTAL_CONCRETE"                 },
+																															{ title: "Total Concrete"                 },  //{ title: "TOTAL_CONCRETE"                 },
 																															{ title: "TREE_REMOVAL_NOTES"             },
 																															{ title: "HAS_BEFORE"                     },
 																															{ title: "HAS_AFTER"                      },
@@ -325,6 +338,7 @@ var _timeout = 5000;  // 5 second
 																														 "columnDefs": [
 																																			{
 																																				"targets": [ 0 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
 																																				"visible": false,
 																																				"searchable": false
 																																			},
@@ -461,6 +475,23 @@ var _timeout = 5000;  // 5 second
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			
+																																			{
+																																				"targets": [ 38 ],
+																																				"visible": true,
+																																				"searchable": true,
+																																				"render": $.fn.dataTable.render.number( ',', '.', 2, '$' )
+																																				// add dollar sign  https://datatables.net/forums/discussion/23496/add-dollar-sign-and-two-decimal-places-to-an-entire-column
+																																			},
+																																			{
+																																				"targets": [ 39 ],
+																																				"visible": true,
+																																				"searchable": true,
+																																				"render": $.fn.dataTable.render.number( ',', '.', 2, '$' )
+																																			},
+																																			
+																																			
 																																			{
 																																				"targets": [ 40 ],
 																																				"visible": false,
@@ -498,6 +529,7 @@ var _timeout = 5000;  // 5 second
 																																			},
 																																			{
 																																				"targets": [ 47 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
 																																				"visible": false,
 																																				"searchable": false
 																																			}
@@ -515,9 +547,30 @@ var _timeout = 5000;  // 5 second
 																						   
 																						   
 																						   
+																						   
+																						   // click row event
+																						   $('#data_table').on('click', 'tr', function () {
+																									var data = _table.row( this ).data();
+																									
+																									// site number, location number data[1]
+																									console.log('You clicked on site number : ', data[1] )
+																									
+																									
+																									
+																									
+																									
+																								} );
 																						
+																						   
+																						   
+																						   
+																						   
 																						
+																						 $("#preloader").hide();
+																						 $("#tip").show(); 
 																					  }// success
+																					  
+																					  
 													  })// ajax 
 									
 									
@@ -528,6 +581,12 @@ var _timeout = 5000;  // 5 second
 								   
 								   // handling error message
 									  console.log('ajax error .....', error)
+									  
+									  $("#preloader").hide();
+									  
+									   $("#message").show();
+									   $("#message").html(error )
+																										 
 								   
 							   }
 				
@@ -579,6 +638,10 @@ var _timeout = 5000;  // 5 second
 				function init_web_component(){
 					
 					
+					 //To activate the dropdown menu on click, pass { hover: false } into the above dropdown() function					   
+			           $(".dropdown-trigger").dropdown({ hover: true });	
+					
+					
 					
 					// init all dropdown select field
 					 $('select').formSelect();
@@ -616,7 +679,12 @@ var _timeout = 5000;  // 5 second
 $(document).ready(function(){
 						   
 						   
-	
+	    // active - site -tab
+		$("#site_tab").addClass("active");
+		
+		
+		
+		
 	
 	    init_web_component();
 	

@@ -614,10 +614,23 @@ SELECT DISTINCT category FROM getType ORDER BY category
 
 
 
-   
-                          
-                                <table id="data_table" class="display" width="100%"></table>
+                                <div  class="col s12" id="message" style="display:none"> 
+                                </div>
+                            
+                            
+                            
+                            
+                                     <div id="tip" style="display:none" class="col s12">
+                                        <span class="mdi mdi-lightbulb-on-outline teal-text"></span>&nbsp;
+                                        <label class="right-align"> Click any row to see full site information in a new tab </label>
+                                     </div>   
+                            
+                            
+                            
                                 
+                                <div class="col s12">
+                                  <table id="data_table" class="table-hover" width="100%"></table>
+                                </div>  
                                 
                                 
                                 
@@ -633,6 +646,11 @@ SELECT DISTINCT category FROM getType ORDER BY category
                               
                            
 
+
+	
+      
+	  
+	  <script src="../js/search/swSiteSearch_m.js"></script>
 
 
 
@@ -655,8 +673,5 @@ SELECT DISTINCT category FROM getType ORDER BY category
 
 <cfinclude template="../template/footer_m.cfm" />
 				
-
-	
-<script src="../js/search/swSiteSearch_m.js"></script>
 
 
