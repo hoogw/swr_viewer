@@ -636,7 +636,16 @@ SELECT DISTINCT category FROM getType ORDER BY category
                             
                                 
                                 <div class="col s12">
-                                  <table id="data_table" class="table-hover" width="100%"></table>
+                                
+                                
+										<!---  not need hover class, because material version by default have hover effect already.
+                                        
+                                            <table id="data_table" class="table-hover" width="100%"></table>   
+                                        --->
+                                        
+                                        
+                                           <table id="data_table" class="mdl-data-table" width="100%"></table>
+                                  
                                 </div>  
                                 
                                 
