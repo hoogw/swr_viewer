@@ -361,10 +361,19 @@ var _timeout = 100000;  // 100 second
 																														 "columnDefs": [
 																																			{
 																																				"targets": [ 0 ],
-																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			{
+																																				"targets": [ 1 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
 																																			{
 																																				"targets": [ 2 ],
 																																				"visible": false,
@@ -377,6 +386,14 @@ var _timeout = 100000;  // 100 second
 																																			},
 																																			
 																																			{
+																																				"targets": [ 4 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
+																																			{
 																																				"targets": [5 ],
 																																				"visible": false,
 																																				"searchable": false
@@ -386,6 +403,24 @@ var _timeout = 100000;  // 100 second
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			
+																																			
+																																			{
+																																				"targets": [ 7 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
+																																			{
+																																				"targets": [ 8 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
 																																			{
 																																				"targets": [ 9 ],
 																																				"visible": false,
@@ -430,6 +465,7 @@ var _timeout = 100000;  // 100 second
 																																			
 																																			{
 																																				"targets": [ 17 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
 																																				// datatable-datetime-plugin not working, always return invalid date
 																																				// render: $.fn.dataTable.render.moment( 'MMMM, dd yyyy hh:mm:ss', 'd', 'en' ),
 																																				//https://datatables.net/forums/discussion/40040/datetime-plugin
@@ -444,6 +480,7 @@ var _timeout = 100000;  // 100 second
 																																			
 																																			{
 																																				"targets": [ 18 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
 																																			    // datatable-datetime-plugin not working, always return invalid date
 																																				// render: $.fn.dataTable.render.moment( 'MMMM, dd yyyy hh:mm:ss', 'd', 'en' ),
 																																				//https://datatables.net/forums/discussion/40040/datetime-plugin
@@ -462,11 +499,34 @@ var _timeout = 100000;  // 100 second
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			
+																																			{
+																																				"targets": [ 20 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
 																																			{
 																																				"targets": [ 21 ],
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			
+																																			
+																																			
+																																			
+																																			{
+																																				"targets": [ 22 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
 																																			
 																																			{
 																																				"targets": [ 23 ],
@@ -499,11 +559,35 @@ var _timeout = 100000;  // 100 second
 																																				"searchable": false
 																																			},
 																																			
+																																			
+																																			{
+																																				"targets": [ 29 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
+																																			
+																																			
 																																			{
 																																				"targets": [ 30 ],
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			
+																																			
+																																			{
+																																				"targets": [ 31],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
+																																			
+																																			
 																																			{
 																																				"targets": [ 32 ],
 																																				"visible": false,
@@ -514,6 +598,20 @@ var _timeout = 100000;  // 100 second
 																																				"visible": false,
 																																				"searchable": false
 																																			},
+																																			
+																																			
+																																			
+																																			
+																																			{
+																																				"targets": [ 34 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
+																																				"visible": true,
+																																				"searchable": true
+																																			},
+																																			
+																																			
+																																			
+																																			
 																																			{
 																																				"targets": [ 35 ],
 																																				"visible": false,
@@ -531,8 +629,13 @@ var _timeout = 100000;  // 100 second
 																																			},
 																																			
 																																			
+																																			
+																																			
+																																			
+																																			
 																																			{
 																																				"targets": [ 38 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
 																																				"visible": true,
 																																				"searchable": true,
 																																				"render": $.fn.dataTable.render.number( ',', '.', 2, '$' )
@@ -540,6 +643,7 @@ var _timeout = 100000;  // 100 second
 																																			},
 																																			{
 																																				"targets": [ 39 ],
+																																				"className": 'mdl-data-table__cell--non-numeric',
 																																				"visible": true,
 																																				"searchable": true,
 																																				"render": $.fn.dataTable.render.number( ',', '.', 2, '$' )
@@ -583,7 +687,6 @@ var _timeout = 100000;  // 100 second
 																																			},
 																																			{
 																																				"targets": [ 47 ],
-																																				"className": 'mdl-data-table__cell--non-numeric',
 																																				"visible": false,
 																																				"searchable": false
 																																			}
