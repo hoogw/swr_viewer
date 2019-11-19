@@ -167,21 +167,6 @@
                                                           
                                                         
                                                    
-                                                        
-                                                        <cfif isdefined("session.userid")>
-                                                        
-                                                        
-														
-														   <!---    create
-                                                            <cfif session.user_power gte 0 AND session.user_level gt 0>
-                                                            <td id="div_create" class="center menubar" style="width:80px;" onClick="showDDs('dd_create');">
-                                                            <div onMouseOver="this.style.cursor='pointer';showDDs('dd_create');" 
-                                                            onmouseout="hideDDs();" style="height:20px;border:0px red solid;position:relative;top:3px;">Create</div>
-                                                            </td>
-                                                            </cfif>
-                                                           --->    
-                                                         
-                                                         
                                                          
                                                             
                                                                     
@@ -191,61 +176,24 @@
                                                                 </td>
                                                                 
                                                                 
-                                                                
-                                                                
-                                                                
-                                                         <!---   add
-                                                        
-                                                            <cfif session.user_level gte 2 AND session.user_power gte 0>
-                                                                    <td id="div_add" class="center menubar" style="width:70px;" onClick="showDDs('dd_add');">
-                                                                    <div onMouseOver="this.style.cursor='pointer';showDDs('dd_add');"
-                                                                    onmouseout="hideDDs();" style="height:20px;border:0px red solid;position:relative;top:3px;">Add</div>
-                                                                    </td>
-                                                            </cfif>
-                                                             --->    
+                                                         
                                                             
                                                             
                                                             
-                                                            
-                                                            
-                                                            <!--- joe hu 7/31/18 report access --->
-                                                            <cfif session.user_level gte 2 OR (session.user_power is 1 AND session.user_level is 0) OR (len(session.user_report) gt 0)>
+                                                          
                                                                     <td class="center menubar" style="width:80px;"
                                                                     onclick="changeFrame('search/swReports.cfm');hideDDs();" onMouseOver="this.style.cursor='pointer';">
                                                                     Reports
                                                                     </td>
-                                                            </cfif>
+                                                           
                                                             
                                                             
-                                                            
-                                                            
-                                                        </cfif>
-                                                        
                                                         
                                                         
                                                         
                                                            <td class="right menubar"></td>
                                                         
-                                                                  <!---
-																	<cfif isdefined("session.userid")>
-                                                                                <cfif session.user_level gte 3>
-                                                                                <td class="center menubar" style="width:60px;" 
-                                                                                onclick="changeFrame('search/swDownloadData.cfm');hideDDs();" onMouseOver="this.style.cursor='pointer';">
-                                                                                Data
-                                                                                </td>
-                                                                        </cfif>
-                                                                    </cfif>
-                                                                    --->    
-                                                                    
-                                                                    
-                                                                    <cfif isdefined("session.userid") is false>
-                                                                        <td class="center menubar" style="width:70px;" onClick="showLogin();" onMouseOver="this.style.cursor='pointer';">Login</td>
-                                                                    <cfelse>
-                                                                            <td class="center menubar" style="width:110px;" onClick="showDDs('dd_account');">
-                                                                            <div onMouseOver="this.style.cursor='pointer';showDDs('dd_account');"
-                                                                            onmouseout="hideDDs();" style="height:20px;border:0px red solid;position:relative;top:3px;">My&nbsp;Account</div>
-                                                                            </td>
-                                                                    </cfif>
+                                                                
                                                         
                                                         
                                                         

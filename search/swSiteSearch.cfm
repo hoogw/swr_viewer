@@ -7,27 +7,22 @@
 
 
 
-
-<cfoutput>
-			<cfif isdefined("session.userid") is false>
-                <script>
-                top.location.reload();
+<!---
+		<cfoutput>
+					<cfif isdefined("session.userid") is false>
+						<script>
+						top.location.reload();
+						
+						//var rand = Math.random();
+						//url = "toc.cfm?r=" + rand;
+						//window.parent.document.getElementById('FORM2').src = url;
+						//self.location.replace("../login.cfm?relog=exe&r=#Rand()#&s=3");
+						</script>
+						<cfabort>
+					</cfif>
 				
-                //var rand = Math.random();
-                //url = "toc.cfm?r=" + rand;
-                //window.parent.document.getElementById('FORM2').src = url;
-                //self.location.replace("../login.cfm?relog=exe&r=#Rand()#&s=3");
-                </script>
-                <cfabort>
-            </cfif>
-            <!--- <cfif session.user_level is 1>
-                <script>
-                self.location.replace("../login.cfm?relog=false&r=#Rand()#&s=3&chk=authority");
-                </script>
-                <cfabort>
-            </cfif> --->
-</cfoutput>
-
+		</cfoutput>
+--->
 
 
 
@@ -48,14 +43,14 @@ SELECT * FROM tblPackageGroup ORDER BY package_group
 
 <!--- Get Facility Type --->
 <cfquery name="getType" datasource="#request.sqlconn#" dbtype="ODBC">
-SELECT * FROM tblType ORDER BY type
+SELECT * FROM tblType WHERE deleted is null ORDER BY type
 </cfquery>
 
 
 
 
 
-<!--- Get Specail Fund --->
+<!--- Get Special Fund --->
 <cfquery name="getSpecialFund" datasource="#request.sqlconn#" dbtype="ODBC">
 SELECT * FROM tblSpecialFund ORDER BY id
 </cfquery>

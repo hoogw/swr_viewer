@@ -826,6 +826,18 @@ var _timeout = 100000;  // 100 second
 
 
 
+				function new_tab_show_callback (){
+                                        
+					console.log('showing tab +++++ ' + instance_tabs.index)
+					
+					// search tab clicked
+					if (instance_tabs.index == 2){
+							
+					
+						}// if
+
+		}//function new_tab_show_callback
+
 
 
 
@@ -845,13 +857,13 @@ $(document).ready(function(){
 		
 		
 	
-	    init_web_component();
+	  //  init_web_component();
 	
 	
 	    
 		
 		
-		fetch_data();
+	//	fetch_data();
    
 	
 	
@@ -859,3 +871,43 @@ $(document).ready(function(){
 	
 	
   });
+
+
+
+  
+              // =========== materialize init  tab ===============
+
+                // init all component
+                  //M.AutoInit();
+
+
+                  // init materialize tab
+				  var elem = $('.tabs')
+
+				  // bug, swipeable let height 50% shorter 
+				  //var options = {swipeable: true, duration: 300}
+				  var options = {duration: 600, onShow: new_tab_show_callback}
+				  var init_tabs = M.Tabs.init(elem, options);
+				  var instance_tabs = M.Tabs.getInstance(elem);
+
+
+
+
+
+
+				  // add tooltip
+				  $('.tooltipped').tooltip();
+				
+				
+				
+				// tooltip without jquery
+				/*
+					  document.addEventListener('DOMContentLoaded', function() {
+						var tooltip_elems = document.querySelectorAll('.tooltipped');
+						var __tooltip_options = {enterDelay:0,inDuration:0, outDuration:0 }
+						var instances = M.Tooltip.init(tooltip_elems, __tooltip_options);
+					  });
+				*/
+
+
+			// =========== End ========= materialize init  tab ===============

@@ -27,7 +27,7 @@ SELECT * FROM tblPackageGroup ORDER BY package_group
 
 <!--- Get Facility Type --->
 <cfquery name="getType" datasource="#request.sqlconn#" dbtype="ODBC">
-SELECT * FROM tblType ORDER BY type
+SELECT * FROM tblType WHERE deleted is null ORDER BY type
 </cfquery>
 
 
@@ -631,12 +631,12 @@ SELECT DISTINCT category FROM getType ORDER BY category
 
 
 
+
+
+
                             
                                         
-                        <div id="preloader" class="progress" style="display:none">
-                          <div class="indeterminate"></div>
-                        </div>        
-                                
+                      
                             
                                 
                                 <div class="col s12">
