@@ -831,8 +831,14 @@ var _timeout = 100000;  // 100 second
 					console.log('showing tab +++++ ' + instance_tabs.index)
 					
 					// search tab clicked
-					if (instance_tabs.index == 2){
+					if (instance_tabs.index == 1){
 							
+						   // fix bug, tree tab indicator not show correct when first click tree tab.
+						   // tempary fix by pre-select first tab
+
+						   
+                            
+						             
 					
 						}// if
 
@@ -849,13 +855,30 @@ var _timeout = 100000;  // 100 second
 // starting point of this page scripting
 $(document).ready(function(){
 						   
-						   
+						  
+	
+
+
+
+
 	    // active - site -tab
 		$("#site_tab").addClass("active");
 		
 		
 		
 		
+        // ----------------- fix bug : Nested tabs indicator not initializing properly -----------------
+				//https://github.com/Dogfalo/materialize/issues/4837
+
+				$("ul.tabs").tabs({
+					onShow: function(tab) {
+					$("#tree_nested").tabs();
+					}
+				});
+        //----------------- end ------- fix bug : Nested tabs indicator not initializing properly -----------------
+
+
+
 	
 	  //  init_web_component();
 	

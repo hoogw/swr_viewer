@@ -1,36 +1,7 @@
-
-                                
-                                
-                                
-                                
-     <cfoutput>                           
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                                                    
-                                                  
-                       
-              				 </body>        
-                       
-                       
-                        
-                        
-                                         
-                                
-             
-        </html>
+ </body>        
+</html>
 
 
 
-</cfoutput>
+
 			

@@ -677,6 +677,52 @@ SELECT DISTINCT category FROM getType ORDER BY category
                            
 
 
+
+
+
+
+
+
+           
+           
+            <!--- --------------    data table js --------------    --->
+           
+           
+					 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        
+                     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.material.min.js"></script>
+                     
+
+
+                    <!--- This is google version, material lite, not materialized ,   this will cause navigation menu bar miss position, 
+                    it is for materialized-data-table only, so do not use this feature, until you fix the miss position problem.      
+                    --->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
+                  
+                      
+                      
+                      
+                      
+                     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css">
+                     
+                     
+                     
+                            <!---  --------------  datetime.js   -------------- --->
+                            <script src="#_site_root_dir#js/lib/moment.js/moment.js"></script>
+                            
+                            
+                            
+                            
+                           <!--- not working ------------- datatable-datetime-plugin not working, always return invalid date  , https://datatables.net/forums/discussion/40040/datetime-plugin--->
+           					<!---<script src="https://cdn.datatables.net/plug-ins/1.10.20/dataRender/datetime.js"></script>  --->
+                           <!--- <script src="#_site_root_dir#js/lib/moment.js/datetime_datatable_plugin.js"></script>--->
+                            
+                            
+                            
+            <!--- END  -------------- data table js   -------------- --->
+           
+           
+           
 	
       
 	  
