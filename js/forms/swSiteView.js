@@ -1,6 +1,14 @@
+var app
+
 var _timeout = 100000;  // 100 second
 
+var site_no = 0;
 
+
+
+
+// material tab
+var elem, options ,init_tabs ,instance_tabs;
 
 
 
@@ -821,7 +829,41 @@ var _timeout = 100000;  // 100 second
 
 
 
-
+          
+				function materialize_init_tab(){
+					// init all component
+					  M.AutoInit();
+	
+	
+					  // init materialize tab
+					   elem = $('.tabs')
+	
+					  // bug, swipeable let height 50% shorter 
+					  //var options = {swipeable: true, duration: 300}
+					   options = {duration: 600, onShow: new_tab_show_callback}
+					   init_tabs = M.Tabs.init(elem, options);
+					   instance_tabs = M.Tabs.getInstance(elem);
+	
+	
+	
+	
+	
+	
+					  // add tooltip
+					  $('.tooltipped').tooltip();
+					
+					
+					
+					// tooltip without jquery
+					/*
+						  document.addEventListener('DOMContentLoaded', function() {
+							var tooltip_elems = document.querySelectorAll('.tooltipped');
+							var __tooltip_options = {enterDelay:0,inDuration:0, outDuration:0 }
+							var instances = M.Tooltip.init(tooltip_elems, __tooltip_options);
+						  });
+					*/
+	
+						}
 
 
 
@@ -842,9 +884,52 @@ var _timeout = 100000;  // 100 second
 					
 						}// if
 
-		}//function new_tab_show_callback
+		        }
 
 
+
+
+
+		
+				function parse_url_get_parameters(){
+			
+			
+						//  .......... global var ..............
+						
+						
+							// https://developer.mozilla.org/en-US/docs/Web/API/Location
+						
+								current_url = window.location.protocol + "//" + window.location.host + window.location.pathname;
+						
+								console.log('current_url ...... ',current_url);
+								
+								current_pathname = window.location.pathname;       //    /json2tree/arcgisServerList.html
+								current_pathArray = current_pathname.split('/');   //    ["", "json2tree", "arcgisServerList.html"]
+								
+								
+										// ----- parse url param ?url=xxxxxxxxxx  --------
+					
+												urlParams = new URLSearchParams(window.location.search);
+					
+												
+												
+												
+												
+												
+												//.................. required parameter .................
+														site_no = urlParams.get('sid'); // required
+					
+												//.................. required parameter .................
+												
+						
+						}
+			
+
+
+
+
+
+		
 
 
 
@@ -856,7 +941,7 @@ var _timeout = 100000;  // 100 second
 $(document).ready(function(){
 						   
 						  
-	
+	materialize_init_tab()
 
 
 
@@ -879,10 +964,27 @@ $(document).ready(function(){
 
 
 
+
+		parse_url_get_parameters()
+
+		console.log(' site_no is ',  site_no)
+
+
+		app = new Vue({
+			el: '#app',
+			data: {
+			  site_number: site_no
+			}
+		  })
+
+
 	
 	  //  init_web_component();
 	
 	
+
+
+
 	    
 		
 		
@@ -893,44 +995,11 @@ $(document).ready(function(){
 	
 	
 	
-  });
+ 
 
 
 
   
-              // =========== materialize init  tab ===============
-
-                // init all component
-                  //M.AutoInit();
-
-
-                  // init materialize tab
-				  var elem = $('.tabs')
-
-				  // bug, swipeable let height 50% shorter 
-				  //var options = {swipeable: true, duration: 300}
-				  var options = {duration: 600, onShow: new_tab_show_callback}
-				  var init_tabs = M.Tabs.init(elem, options);
-				  var instance_tabs = M.Tabs.getInstance(elem);
-
-
-
-
-
-
-				  // add tooltip
-				  $('.tooltipped').tooltip();
-				
-				
-				
-				// tooltip without jquery
-				/*
-					  document.addEventListener('DOMContentLoaded', function() {
-						var tooltip_elems = document.querySelectorAll('.tooltipped');
-						var __tooltip_options = {enterDelay:0,inDuration:0, outDuration:0 }
-						var instances = M.Tooltip.init(tooltip_elems, __tooltip_options);
-					  });
-				*/
-
-
-			// =========== End ========= materialize init  tab ===============
+  
+			
+		});

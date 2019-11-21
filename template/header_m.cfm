@@ -55,28 +55,9 @@
     
     
     
-            
-            <!---Import Google Icon Font--->
-              <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-              <!---Import materialize.css--->
-              <!--- Compiled and minified CSS --->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        
 
               <!---Let browser know website is optimized for mobile--->
               <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            
-            
-            
-            
-             <!--- 
-             
-                                   more icon at :  https://materialdesignicons.com     
-                                   https://dev.materialdesignicons.com/getting-started/webfont#setup  
-             
-             
-            ---> 
-              <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css">
             
             
             
@@ -86,14 +67,7 @@
                                     
                                     
                                     
-                                
-                            
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.css">
-                    
-                        
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.js"></script>
-                                 
-                                
+                             
               
            
            

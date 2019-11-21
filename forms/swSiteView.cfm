@@ -16,7 +16,7 @@
 
 
 
-    <div class="col s12 m12 l12" id="row_1">
+    <div id="app" class="col s12 m12 l12" id="row_1">
 
           
         
@@ -27,7 +27,7 @@
 
                           <li class="tab col s4" id="tag_main">
                             <a class="teal-text" href="#main"> 
-                              # 161
+                             {{ site_number }}
                             </a>
                           </li> 
                           

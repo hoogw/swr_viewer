@@ -694,13 +694,31 @@ SELECT DISTINCT category FROM getType ORDER BY category
                      
 
 
-                    <!--- This is google version, material lite, not materialized ,   this will cause navigation menu bar miss position, 
-                    it is for materialized-data-table only, so do not use this feature, until you fix the miss position problem.      
-                    --->
+                <!--- This is google version, material lite, not materialized ,   this will cause navigation menu bar miss position, 
+                    
+                    Do not use this online version,
+
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
-                  
+                    
+                    Instead use our downloaded version below
+
+                    ul, ol {
+                              font-size: 14px;
+                              font-weight: 400;
+                              line-height: 24px; 
+                              letter-spacing: 0; }
+
+
+                     line-height: 24px;  cause the problem, should not exist, should be 64px  
+
+                     fix bug by comment out   line-height: 24px;    
+
+                  --->
                       
-                      
+                      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                       <link rel="stylesheet" href="#_site_root_dir#css/MDL1.3/material.css">
+
+                       
                       
                       
                      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css">
@@ -723,8 +741,10 @@ SELECT DISTINCT category FROM getType ORDER BY category
            
            
            
-	
+	 
       
+
+
 	  
 	  <script src="../js/search/swSiteSearch_m.js"></script>
 

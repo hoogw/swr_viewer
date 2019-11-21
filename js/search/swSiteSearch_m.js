@@ -714,7 +714,11 @@ var _timeout = 100000;  // 100 second
 																									// site number, location number data[1]
 																									console.log('You clicked on site number : ', data[1] )
 																									
-																									
+                                                                                                    var _site_url = url + 'forms/swSiteView.cfm?sid=' + data[1] 
+																									console.log('_site_url : ', _site_url )
+
+
+																									window.open(_site_url, '_blank');
 																									
 																									
 																									
