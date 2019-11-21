@@ -26,8 +26,10 @@
 
 
                           <li class="tab col s4" id="tag_main">
-                            <a class="teal-text" href="#main"> 
-                             {{ site_number }}
+                            <a id="main_tab_title" class="teal-text" href="#main"> 
+                            
+                                
+                                
                             </a>
                           </li> 
                           

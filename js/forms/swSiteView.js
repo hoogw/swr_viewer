@@ -968,15 +968,20 @@ $(document).ready(function(){
 		parse_url_get_parameters()
 
 		console.log(' site_no is ',  site_no)
+		
+		site_no = 'Site ' + site_no 
+		 
+		$("#main_tab_title").text(site_no);
 
 
+/*
 		app = new Vue({
 			el: '#app',
 			data: {
 			  site_number: site_no
 			}
 		  })
-
+*/
 
 	
 	  //  init_web_component();
