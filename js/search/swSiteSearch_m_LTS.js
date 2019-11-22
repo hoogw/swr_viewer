@@ -1,15 +1,6 @@
-var app
-
 var _timeout = 100000;  // 100 second
 
-var site_no = 0;
 
-
-
-
-// material tab
-var elem, options ,init_tabs ,instance_tabs,
-     elem_nested, options_nested ,init_tabs_nested ,instance_tabs_nested;
 
 
 
@@ -723,7 +714,11 @@ var elem, options ,init_tabs ,instance_tabs,
 																									// site number, location number data[1]
 																									console.log('You clicked on site number : ', data[1] )
 																									
-																									
+                                                                                                    var _site_url = url + 'forms/swSiteView.cfm?sid=' + data[1] 
+																									console.log('_site_url : ', _site_url )
+
+
+																									window.open(_site_url, '_blank');
 																									
 																									
 																									
@@ -830,178 +825,12 @@ var elem, options ,init_tabs ,instance_tabs,
 
 
 
-          
-				function materialize_init_tab(){
-					// init all component
-					 // M.AutoInit();
-	
-	
-					  // init materialize tab
-					   //elem = $('.tabs')
-					   elem = $('#site_top')
-
-
-					  // bug, swipeable let height 50% shorter 
-					  //var options = {swipeable: true, duration: 300}
-					   options = {duration: 600, onShow: new_tab_show_callback}
-					   init_tabs = M.Tabs.init(elem, options);
-					   instance_tabs = M.Tabs.getInstance(elem);
-	
-	
-	
-
-
-						// nest tab only init materialize tab
-						elem_nested = $('#tree_nested')
-							
-						// bug, swipeable let height 50% shorter 
-						//var options = {swipeable: true, duration: 300}
-						options_nested = {duration: 600, onShow: new_tab_show_callback_nested}
-						init_tabs_nested = M.Tabs.init(elem_nested, options_nested);
-						instance_tabs_nested = M.Tabs.getInstance(elem_nested);
 
 
 
 
 
 
-
-
-	
-	
-	
-					  // add tooltip
-					  $('.tooltipped').tooltip();
-					
-					
-					
-					// tooltip without jquery
-					/*
-						  document.addEventListener('DOMContentLoaded', function() {
-							var tooltip_elems = document.querySelectorAll('.tooltipped');
-							var __tooltip_options = {enterDelay:0,inDuration:0, outDuration:0 }
-							var instances = M.Tooltip.init(tooltip_elems, __tooltip_options);
-						  });
-					*/
-	
-						}
-
-
-
-
-				function new_tab_show_callback (){
-									
-					
-									
-					
-
-
-				
-
-					console.log('showing tab +++++ 1 +++++  ' + instance_tabs.index)
-					
-					// 
-					if (instance_tabs.index == 1){
-							
-						   // fix bug, tree tab indicator not show correct when first click tree tab.
-						   // tempary fix by pre-select first tab
-
-						   
-                            
-						             
-					
-						}// if
-
-
-
-
-                    
-						// ----------------- fix bug : Nested tabs indicator not initializing properly -----------------
-								//https://github.com/Dogfalo/materialize/issues/4837
-								/*
-								$("ul.tabs").tabs({
-									onShow: function(tab) {
-									$("#tree_nested").tabs();
-									}
-								});
-								*/
-
-								$("#tree_nested").tabs();
-						//----------------- end ------- fix bug : Nested tabs indicator not initializing properly -----------------
-						
-
-
-
-
-		        }
-
-
-
-				
-				function new_tab_show_callback_nested (){
-					
-
-					console.log('showing tab nested 2222222 ' + instance_tabs_nested.index)
-					
-					// 
-					if (instance_tabs_nested.index == 1){
-							
-						   // fix bug, tree tab indicator not show correct when first click tree tab.
-						   // tempary fix by pre-select first tab
-
-						   
-                            
-						             
-					
-						}// if
-
-
-
-		        }
-
-				
-
-
-		
-				function parse_url_get_parameters(){
-			
-			
-						//  .......... global var ..............
-						
-						
-							// https://developer.mozilla.org/en-US/docs/Web/API/Location
-						
-								current_url = window.location.protocol + "//" + window.location.host + window.location.pathname;
-						
-								console.log('current_url ...... ',current_url);
-								
-								current_pathname = window.location.pathname;       //    /json2tree/arcgisServerList.html
-								current_pathArray = current_pathname.split('/');   //    ["", "json2tree", "arcgisServerList.html"]
-								
-								
-										// ----- parse url param ?url=xxxxxxxxxx  --------
-					
-												urlParams = new URLSearchParams(window.location.search);
-					
-												
-												
-												
-												
-												
-												//.................. required parameter .................
-														site_no = urlParams.get('sid'); // required
-					
-												//.................. required parameter .................
-												
-						
-						}
-			
-
-
-
-
-
-		
 
 
 
@@ -1012,65 +841,25 @@ var elem, options ,init_tabs ,instance_tabs,
 // starting point of this page scripting
 $(document).ready(function(){
 						   
-						  
-	    materialize_init_tab()
-
-
-
-
-	    //header navigation menu bar,  active - site -tab
+						   
+	    // active - site -tab
 		$("#site_tab").addClass("active");
 		
 		
 		
 		
-
-
-		parse_url_get_parameters()
-
-		console.log(' site_no is ',  site_no)
-		
-		//site_no = 'Site ' + site_no 
-		 
-		$("#main_tab_title").text(site_no);
-		$("#site_number").text(site_no);
-		$("#package_number").text('	BOE - 6 ');
-
-
-        // instance_tabs.select('main');
-
-/*
-		app = new Vue({
-			el: '#app',
-			data: {
-			  site_number: site_no
-			}
-		  })
-
-*/
 	
-	  //  init_web_component();
+	    init_web_component();
 	
 	
-
-
-
 	    
 		
 		
-	//	fetch_data();
+		fetch_data();
    
 	
 	
 	
 	
 	
- 
-
-
-
-  
-  
-			
-		});
-
+  });
