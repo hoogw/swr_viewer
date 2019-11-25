@@ -1,7 +1,23 @@
-  
+var __operation, __limit,  __limited_DATA, __DATA;
+
+
+
+var workerResult = {};
+var data, query ;
+
 
 
   onmessage = async function(e) {
+
+   
+    __operation = e.data._operation
+    __limit = e.data._limit
+    console.log('__operation, e. ', e,  __operation, __limit);
+
+
+
+    if (__operation == 'fetch'){
+         
 
                 var params = e.data._data;
                 var params_converted=[];
@@ -9,8 +25,8 @@
                 var _querystring;
 
 
-               console.log('Worker: Message received from main script', e);
-               console.log('Worker: data : rawwwwwwww ', params);
+              // console.log('Worker: Message received from main script', e);
+              // console.log('Worker: data : rawwwwwwww ', params);
 
               
               // _querysting can NOT be object or array {}, [],
@@ -76,32 +92,60 @@
                       _string =_string.replace(/^\s+|\s+$/g,"");
                       
                       
-                      console.log(_string);
+                     // console.log(_string);
 
-                      var data = JSON.parse(_string);
+                       data = JSON.parse(_string);
 
 
-                     console.log("data---", data);
+                   //  console.log("data---", data);
                                                            
-                                                            var workerResult = JSON.parse(data.QUERY);
+                      query = JSON.parse(data.QUERY);
 
 
-                                                          console.log("workerResult=====", workerResult);
+                   //   console.log("query=====", query);
                                                            
-                                                            if(data.RESULT != "Success") {
+                     if(data.RESULT != "Success") {
                                                                 
                                                                 
-                                                                postMessage({error:'coldfusion error'});
+                        postMessage({error:'coldfusion error'});
 
 
-                                                            } else {
+                     } else {
+
+                            if (query.DATA) {
+                                __DATA = query.DATA                                     
+                                                                                            
+                                //var _columns = query.COLUMNS
+                                //console.log(' _columns ..... ',  _columns)
+                                                                
+                                //var _data = query.DATA
+                               // console.log(' _data .....>>>> ',  _data)
+
+                                // only load limit number of items
+                                 
+                                __limited_DATA = [];
+
+                                                               
+                                for (let w = 0; w < __limit; w++) {
+                                     
+                                    __limited_DATA.push(__DATA[w])
+
+                                }
+
+
+
+                                workerResult = {have_more: true, COLUMNS: query.COLUMNS, DATA: __limited_DATA}
 
                                                             
-                                                                    postMessage(workerResult);
+                                postMessage(workerResult);
 
-                                                            }
+                            } else {
 
+                                postMessage({error:'query.DATA is empty'});
 
+                            }
+
+                    }
 
                 
                 } catch (error) {
@@ -117,7 +161,23 @@
 
 				
 
+    } else if (__operation == 'load_more') {
 
+
+
+
+
+           if (__limit == -1){
+
+
+              workerResult = {have_more: false, COLUMNS: query.COLUMNS, DATA: query.DATA}
+              postMessage(workerResult);
+            
+           }
+
+
+
+    }
 
 
 

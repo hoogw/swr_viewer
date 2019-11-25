@@ -74,7 +74,7 @@ var _table;
 											worker.onmessage = function(e) {
 
 
-															//console.log('Message received from worker -- e -- ', e);
+															console.log('Message received from worker -- e -- ', e);
 
 																
 															if (e.data.DATA){			

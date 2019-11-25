@@ -1,3 +1,26 @@
+//  ****  Without web worker, slow, freeze, no response for 6.1 second ****
+// performance score is 50, 
+// First Meaningful Paint 5.5s
+
+// ajax, cost 1500+ ms, 
+// render 4005 item cost 3000+ ms, this process will freeze browser UI component for 5000+ ms, 
+
+
+
+
+// To solve this performance issue, must use web worker un-freeze UI maint thread.
+// first time load only 12 items, for fast data-table rendering,
+// then continue load whole 4005 item, so user will not feel any browser freeze no-response, all happen behind the scene.
+
+
+
+//  ****  With web worker, faster, not feels freeze  ****
+// performance score is 71, 
+// First Meaningful Paint 3.0s
+
+
+
+
 var _timeout = 100000;  // 100 second
 
 
