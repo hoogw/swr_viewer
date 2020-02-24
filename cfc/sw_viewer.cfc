@@ -249,108 +249,110 @@
 	
 	
 	<cffunction name="searchSites" access="remote" returnType="any" returnFormat="plain" output="false">
-		<cfargument name="ss_no" required="true">
-		<!--- <cfargument name="ss_sfx" required="true"> --->
-		<cfargument name="ss_pgroup" required="true">
-		<cfargument name="ss_pno" required="true">
-		<cfargument name="ss_category" required="true">
-		<cfargument name="ss_type" required="true">
-		<cfargument name="ss_name" required="true">
-		<cfargument name="ss_address" required="true">
-		<cfargument name="ss_wo" required="true">
-		<cfargument name="ss_assessed" required="true">
-		<!--- <cfargument name="ss_assessor" required="true"> --->
-		<cfargument name="ss_assfrm" required="true">
-		<cfargument name="ss_assto" required="true">
-		<cfargument name="ss_qcfrm" required="true">
-		<cfargument name="ss_qcto" required="true">
-		<cfargument name="ss_consfrm" required="true">
-		<cfargument name="ss_consto" required="true">
-		<cfargument name="ss_concfrm" required="true">
-		<cfargument name="ss_concto" required="true">
-		<cfargument name="ss_repairs" required="true">
-	<!---	<cfargument name="ss_severity" required="true">  --->
-    
-    
-    
-    
-     <!--- joe hu 2019-4 multi change --->
-    		<cfargument name="ss_grievance" required="true">
-    		<cfargument name="ss_locked" required="true">
-            <cfargument name="ss_specialfund" required="true">
-            
-           
-            
-     <!--- end ---- joe hu 2019-4 multi change --->
-     
-     
-     
-     
-     
-     
-     
-     
-     <!---  ---- joe hu 8-2-2019 search bar change --->
-    
-   
-         <cfargument name="ss_action" required="false">
-     
-     
-         
-           
-      
-     
-     <!---        ---- end ---- joe hu 8-2-2019 search bar change --->
-     
-     
-     
-     
-     
-     
-     
-     
-     
-    
-		<!--- <cfargument name="ss_qc" required="true"> --->
-		<cfargument name="ss_cd" required="true">
-		<cfargument name="ss_removed" required="true">
-		<cfargument name="ss_zip" required="true">
-		<cfargument name="ss_curbramp" required="true">
-		<!--- <cfargument name="ss_pn" required="true"> --->
-		<cfargument name="ss_keyword" required="true">
-        
-	<!---	<cfargument name="ss_hasA" required="true">    --->
-	<!---	<cfargument name="ss_hasB" required="true">    --->
-    
-		<cfargument name="ss_hascert" required="true">
-		<cfargument name="ss_assnull" required="false">
-		<cfargument name="ss_qcnull" required="false">
-		<cfargument name="ss_consnull" required="false">
-		<cfargument name="ss_concnull" required="false">
-		<cfargument name="ss_order" required="false" default="location_no,location_suffix">
-		
-		<cfif isdefined("ss_assnull")><cfset session.ss_assnull = 1><cfelse><cfset StructDelete(Session, "ss_assnull")></cfif>
-		<cfif isdefined("ss_qcnull")><cfset session.ss_qcnull = 1><cfelse><cfset StructDelete(Session, "ss_qcnull")></cfif>
-		<cfif isdefined("ss_consnull")><cfset session.ss_consnull = 1><cfelse><cfset StructDelete(Session, "ss_consnull")></cfif>
-		<cfif isdefined("ss_concnull")><cfset session.ss_concnull = 1><cfelse><cfset StructDelete(Session, "ss_concnull")></cfif>
-		
 
 
- <!---  ---- joe hu 8-2-2019 search bar change --->
- 
-        <cfif ss_action is not "">
- 
-						<cfif ss_action eq 0>
-                             <cfset tree_action_type = "Has_Removed_Trees" >
-                         <cfelseif ss_action eq 1>    
-                              <cfset tree_action_type = "Has_Planted_Trees" >
-                         <cfelseif ss_action eq 2>  
-                               <cfset tree_action_type = "Has_Preserved_Trees" >
-                               
-                          </cfif>     
-               
-         </cfif>
- <!---        ---- end ---- joe hu 8-2-2019 search bar change --->
+					<cfargument name="ss_no" required="true">
+					<!--- <cfargument name="ss_sfx" required="true"> --->
+					<cfargument name="ss_pgroup" required="true">
+					<cfargument name="ss_pno" required="true">
+					<cfargument name="ss_category" required="true">
+					<cfargument name="ss_type" required="true">
+					<cfargument name="ss_name" required="true">
+					<cfargument name="ss_address" required="true">
+					<cfargument name="ss_wo" required="true">
+					<cfargument name="ss_assessed" required="true">
+					<!--- <cfargument name="ss_assessor" required="true"> --->
+					<cfargument name="ss_assfrm" required="true">
+					<cfargument name="ss_assto" required="true">
+					<cfargument name="ss_qcfrm" required="true">
+					<cfargument name="ss_qcto" required="true">
+					<cfargument name="ss_consfrm" required="true">
+					<cfargument name="ss_consto" required="true">
+					<cfargument name="ss_concfrm" required="true">
+					<cfargument name="ss_concto" required="true">
+					<cfargument name="ss_repairs" required="true">
+							<!---	<cfargument name="ss_severity" required="true">  --->
+							
+							
+							
+							
+							<!--- joe hu 2019-4 multi change --->
+									<cfargument name="ss_grievance" required="true">
+									<cfargument name="ss_locked" required="true">
+									<cfargument name="ss_specialfund" required="true">
+									
+								
+									
+							<!--- end ---- joe hu 2019-4 multi change --->
+				
+				
+				
+				
+				
+				
+				
+				
+				<!---  ---- joe hu 8-2-2019 search bar change --->
+				
+			
+					<cfargument name="ss_action" required="false">
+				
+				
+					
+					
+				
+				
+				<!---        ---- end ---- joe hu 8-2-2019 search bar change --->
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<!--- <cfargument name="ss_qc" required="true"> --->
+					<cfargument name="ss_cd" required="true">
+					<cfargument name="ss_removed" required="true">
+					<cfargument name="ss_zip" required="true">
+					<cfargument name="ss_curbramp" required="true">
+					<!--- <cfargument name="ss_pn" required="true"> --->
+					<cfargument name="ss_keyword" required="true">
+					
+				<!---	<cfargument name="ss_hasA" required="true">    --->
+				<!---	<cfargument name="ss_hasB" required="true">    --->
+				
+					<cfargument name="ss_hascert" required="true">
+					<cfargument name="ss_assnull" required="false">
+					<cfargument name="ss_qcnull" required="false">
+					<cfargument name="ss_consnull" required="false">
+					<cfargument name="ss_concnull" required="false">
+					<cfargument name="ss_order" required="false" default="location_no,location_suffix">
+					
+					<cfif isdefined("ss_assnull")><cfset session.ss_assnull = 1><cfelse><cfset StructDelete(Session, "ss_assnull")></cfif>
+					<cfif isdefined("ss_qcnull")><cfset session.ss_qcnull = 1><cfelse><cfset StructDelete(Session, "ss_qcnull")></cfif>
+					<cfif isdefined("ss_consnull")><cfset session.ss_consnull = 1><cfelse><cfset StructDelete(Session, "ss_consnull")></cfif>
+					<cfif isdefined("ss_concnull")><cfset session.ss_concnull = 1><cfelse><cfset StructDelete(Session, "ss_concnull")></cfif>
+					
+
+
+			<!---  ---- joe hu 8-2-2019 search bar change --->
+			
+					<cfif ss_action is not "">
+			
+									<cfif ss_action eq 0>
+										<cfset tree_action_type = "Has_Removed_Trees" >
+									<cfelseif ss_action eq 1>    
+										<cfset tree_action_type = "Has_Planted_Trees" >
+									<cfelseif ss_action eq 2>  
+										<cfset tree_action_type = "Has_Preserved_Trees" >
+										
+									</cfif>     
+						
+					</cfif>
+			<!---        ---- end ---- joe hu 8-2-2019 search bar change --->
 
 
 		<cfset var data = {}>
@@ -478,31 +480,40 @@
 
         <!--- End ---  joe -----   2/12/2018 -----------  requestID 107 ---- 3)         --->
         
+
+
+
+
 		<cfquery name="getPackages" datasource="#request.sqlconn#">
-		SELECT * FROM vwSites WHERE 1=1
-		<cfif ss_no is not "">AND location_no = #ss_no#</cfif> 
-		<!--- <cfif ss_sfx is not "">AND site_suffix = '#ss_sfx#'</cfif>  --->
-		<cfif ss_pgroup is not "">
-			<cfif ss_pgroup is "ALL">
-				AND package_group is not NULL
-			<cfelseif ss_pgroup is "NONE">
-				AND package_group is NULL
-			<cfelse>
-				AND package_group = '#ss_pgroup#'
-			</cfif>
-		</cfif> 
-		<cfif ss_pno is not "">AND package_no = '#ss_pno#'</cfif> 
-		<cfif ss_type is not "">AND type = '#ss_type#'</cfif>
-		<cfif ss_category is not "">AND type_desc = '#ss_category#'</cfif>
+
+
+				SELECT * FROM tblSites WHERE 1=1
+
+
+
+				<cfif ss_no is not "">AND location_no = #ss_no#</cfif> 
+				<!--- <cfif ss_sfx is not "">AND site_suffix = '#ss_sfx#'</cfif>  --->
+				<cfif ss_pgroup is not "">
+					<cfif ss_pgroup is "ALL">
+						AND package_group is not NULL
+					<cfelseif ss_pgroup is "NONE">
+						AND package_group is NULL
+					<cfelse>
+						AND package_group = '#ss_pgroup#'
+					</cfif>
+				</cfif> 
+				<cfif ss_pno is not "">AND package_no = '#ss_pno#'</cfif> 
+				<cfif ss_type is not "">AND type = '#ss_type#'</cfif>
+				<cfif ss_category is not "">AND type_desc = '#ss_category#'</cfif>
         
-        
-        <!--- joe hu ------ 2/14/2018     -----------  requestID 107 ---- 2) ----------  ---> 
-        
-        	<!---  =========== Facility Name  ================    ---> 
-                
-			<!--- ---- original ------    
-	        <cfif trim(ss_name) is not "">AND name LIKE '%#preservesinglequotes(ss_name)#%'</cfif> 
-	        --->
+				
+				<!--- joe hu ------ 2/14/2018     -----------  requestID 107 ---- 2) ----------  ---> 
+				
+					<!---  =========== Facility Name  ================    ---> 
+						
+					<!--- ---- original ------    
+					<cfif trim(ss_name) is not "">AND name LIKE '%#preservesinglequotes(ss_name)#%'</cfif> 
+					--->
         
             <cfset target_string = '' >
             <cfset quoted_string_array = []>
@@ -754,16 +765,20 @@
         
         
         
-        
-        
-		<cfif ss_hascert is not "">AND has_certificate = '#ss_hascert#'</cfif> 
-		<cfif ss_removed is not "">AND removed = #ss_removed#<cfelse>AND removed is NULL</cfif> 
-		<cfif isdefined("ss_assnull")>AND assessed_date IS NULL</cfif>
-		<cfif isdefined("ss_qcnull")>AND qc_date IS NULL</cfif>
-		<cfif isdefined("ss_consnull")>AND construction_start_date IS NULL</cfif>
-		<cfif isdefined("ss_concnull")>AND construction_completed_date IS NULL</cfif>
-		ORDER BY #ss_order#
+					
+					
+					<cfif ss_hascert is not "">AND has_certificate = '#ss_hascert#'</cfif> 
+					<cfif ss_removed is not "">AND removed = #ss_removed#<cfelse>AND removed is NULL</cfif> 
+					<cfif isdefined("ss_assnull")>AND assessed_date IS NULL</cfif>
+					<cfif isdefined("ss_qcnull")>AND qc_date IS NULL</cfif>
+					<cfif isdefined("ss_consnull")>AND construction_start_date IS NULL</cfif>
+					<cfif isdefined("ss_concnull")>AND construction_completed_date IS NULL</cfif>
+					ORDER BY #ss_order#
 	</cfquery>
+
+
+
+
 	
 		<cfset data.query = serializeJSON(getPackages)>
 		
