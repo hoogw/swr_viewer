@@ -487,7 +487,8 @@
 		<cfquery name="getPackages" datasource="#request.sqlconn#">
 
 
-				SELECT * FROM tblSites WHERE 1=1
+				SELECT * FROM vwSites WHERE 1=1
+
 
 
 

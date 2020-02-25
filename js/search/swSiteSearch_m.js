@@ -45,8 +45,9 @@ var _table;
 
 
 var _url_full_info = url + "cfc/sw.cfc?method=searchSites&callback=";
-														
-var _url_preload = url + "cfc/sw_viewer.cfc?method=searchSites&callback=";
+					
+
+
 
 var _frm;
 
@@ -634,8 +635,8 @@ var _frm;
 				               $("#tip").hide(); 
 							   
 
-							   // for fast, only load partial info from site table 
-							  // worker.postMessage({ _operation:'fetch', _limit: 20 , _url: _url_preload, _data: _frm });
+							
+							   // for fast preview, only render first 20 item, 
 							   worker.postMessage({ _operation:'fetch', _limit: 20 , _url: _url_full_info, _data: _frm });
 
 							   
