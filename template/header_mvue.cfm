@@ -118,22 +118,7 @@
               </head>
               <body>
 
-                   <div id="app">
-                      <v-app id="inspire">
-                        <v-tabs>
-                          <v-tab>Item One</v-tab>
-                          <v-tab>Item Two</v-tab>
-                          <v-tab>Item Three</v-tab>
-                        </v-tabs>
-                      </v-app>
-                    </div>
-                        
-                 
-                                
-                               
-                         <div id="preloader" class="progress" style="display:none">
-                          <div class="indeterminate"></div>
-                        </div>        
+                      
                                        
                                           
           
