@@ -4,16 +4,53 @@
 			<!---	 specially for viewer only  --->
 
 
+                       <!--- -------- geometry 3/17/2020 ------------ --->  
+
+
+								<cffunction name="getGeocoding" access="remote" returnType="any" returnFormat="json" output="false">
+									
+									
+
+									<cfquery name="getSiteGeometry" datasource="#request.sqlconn#">
+
+									     SELECT  
+
+
+											     OBJECTID
+
+												,Location_No
+												,Geotype
+												
+									   	<!---   
+										        must exclude geometry column, 
+										        otherwise, you will get error as : 
+										   				coldfusion.runtime.JSONUtils$JSONSerializeBinaryException: 
+										   				JSON serialization failure: Unable to serialize binary data to JSON 
+
+												,Shape   
+												
+										--->  
+
+												,Shape.STGeometryType() as spatialType
+												,Shape.ToString() as wkt
+
+											FROM tblGeocoding
+
+									</cfquery>
+
+
+									<cfreturn getSiteGeometry>
+									
+								</cffunction>
+	
+	
 
 
 
 
 
 
-
-
-
-
+                        <!--- -------- geometry 3/17/2020 ------------ ---> 
 
 			<!---  end ----	 specially for viewer only  --->
 
@@ -7448,6 +7485,24 @@
     
     
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 	
 </cfcomponent>
